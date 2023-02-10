@@ -75,6 +75,18 @@ export class ShopComponent implements OnInit {
     this.getProducts();
   }
 
+  onBrandSelectedDropDown(event: any) {
+    this.shopParams.brandId = event.target.value;
+    this.shopParams.pageNumber = 1;
+    this.getProducts();
+  }
+
+  onTypeSelectedDropDown(event: any) {
+    this.shopParams.typeId = event.target.value;
+    this.shopParams.pageNumber = 1;
+    this.getProducts();
+  }
+
   onPageChanged(event: any) {
     if (this.shopParams.pageNumber !== event) {
       this.shopParams.pageNumber = event;
