@@ -1,0 +1,12 @@
+.my-pagination::ng-deep .page-item.active .page-link {
+  z-index: 1;
+  color: #ffffff;
+  background-color: #880808 !important;
+  border-color: #880808;
+}
+
+.my-pagination::ng-deep .page-item .page-link {
+    z-index: 1;
+    color: #880808;
+    border-color: #880808;
+  }
