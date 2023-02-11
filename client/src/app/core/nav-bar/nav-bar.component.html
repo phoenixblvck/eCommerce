@@ -1,13 +1,13 @@
 <div class="container">
     <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-      <a class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-        <img src="/assets/images/logo.png" alt="logo" style="max-height: 70px;">
+      <a class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none" routerLink="/">
+        <img src="/assets/images/logo.png" styles="pointer: true" alt="logo" style="max-height: 70px;">
       </a>
 
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-        <li ><a class="nav-link px-2 active">Home</a></li>
-        <li><a class="nav-link px-2 link-dark">Shop</a></li>
-        <li><a class="nav-link px-2 link-dark">Contact</a></li>
+        <li ><a class="nav-link px-2" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
+        <li><a class="nav-link px-2" routerLink="/shop" routerLinkActive="active">Shop</a></li>
+        <li><a class="nav-link px-2" routerLink="/contact" routerLinkActive="active">Contact</a></li>
       </ul>
 
       <div class="col-md-3 text-end">
