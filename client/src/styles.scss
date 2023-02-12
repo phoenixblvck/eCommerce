@@ -1,25 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
-// $theme-colors: (
-//   "primary": #880808
-// );
-
-@import "../node_modules/bootstrap/scss/functions";
-@import "../node_modules/bootstrap/scss/variables";
-
-//futhermore it's necesary override the $theme-colors
-
-$theme-colors: (
-  "primary": #880808,
-  "secondary":  $secondary,
-  "success":    $success,
-  "info":       $info,
-  "warning":    $warning,
-  "danger":     $danger,
-  "light":      $light,
-  "dark":       $dark
-);
-/* Importing Bootstrap SCSS file. */
-@import "./node_modules/bootstrap/scss/bootstrap";
-
-/* Importing Datepicker SCSS file. */
 @import "node_modules/ngx-bootstrap/datepicker/bs-datepicker";
+
+@import "./node_modules/bootswatch/dist/journal/variables";
+@import "./node_modules/bootstrap/scss/bootstrap";
+@import "./node_modules/bootswatch/dist/journal/bootswatch";
+
+label.xng-breadcrumb-trail {
+    color: #eb6864;
+}

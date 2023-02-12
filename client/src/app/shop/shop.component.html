@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row">
+  <div class="row" *ngIf="brands.length && types.length">
     <section class="col-md-3">
       <h5 class="text-primary ms-3">Sort</h5>
       <select class="form-select mb-4" (change)="onSortSelected($event)">
@@ -7,7 +7,7 @@
           {{ sort.name }}
         </option>
       </select>
-
+  
       <h5 class="d-block d-md-none text-primary ms-3">Brands</h5>
       <select
         class="d-block d-md-none form-select mb-4"
@@ -17,7 +17,7 @@
           {{ brand.name }}
         </option>
       </select>
-
+  
       <h5 class="d-block d-md-none text-primary ms-3">Types</h5>
       <select
         class="d-block d-md-none form-select mb-4"
@@ -27,32 +27,32 @@
           {{ type.name }}
         </option>
       </select>
-
+  
       <!-- <div class="d-none d-md-block"> -->
-        <h5 class="d-none d-md-block text-primary ms-3">Brands</h5>
-        <ul class="d-none d-md-block list-group my-3">
-          <li
-            class="list-group-item"
-            *ngFor="let brand of brands"
-            [class.active]="brand.id === shopParams.brandId"
-            [value]="brand.id"
-            (click)="onBrandSelected(brand.id)"
-          >
-            {{ brand.name }}
-          </li>
-        </ul>
-        <h5 class="d-none d-md-block text-primary ms-3">Types</h5>
-        <ul class="d-none d-md-block list-group my-3">
-          <li
-            class="list-group-item"
-            *ngFor="let type of types"
-            [class.active]="type.id === shopParams.typeId"
-            [value]="type.id"
-            (click)="onTypeSelected(type.id)"
-          >
-            {{ type.name }}
-          </li>
-        </ul>
+      <h5 class="d-none d-md-block text-primary ms-3">Brands</h5>
+      <ul class="d-none d-md-block list-group my-3">
+        <li
+          class="list-group-item"
+          *ngFor="let brand of brands"
+          [class.active]="brand.id === shopParams.brandId"
+          [value]="brand.id"
+          (click)="onBrandSelected(brand.id)"
+        >
+          {{ brand.name }}
+        </li>
+      </ul>
+      <h5 class="d-none d-md-block text-primary ms-3">Types</h5>
+      <ul class="d-none d-md-block list-group my-3">
+        <li
+          class="list-group-item"
+          *ngFor="let type of types"
+          [class.active]="type.id === shopParams.typeId"
+          [value]="type.id"
+          (click)="onTypeSelected(type.id)"
+        >
+          {{ type.name }}
+        </li>
+      </ul>
       <!-- </div> -->
     </section>
     <section class="col-md-9">
@@ -62,7 +62,7 @@
           [pageNumber]="shopParams.pageNumber"
           [pageSize]="shopParams.pageSize"
         ></app-paging-header>
-
+  
         <div class="d-flex mt-2">
           <input
             (keyup.enter)="onSearch()"
@@ -79,13 +79,13 @@
           </button>
         </div>
       </div>
-
+  
       <div class="row g-3 mb-4">
         <div class="col-6 col-md-4" *ngFor="let product of products">
           <app-product-item [product]="product"></app-product-item>
         </div>
       </div>
-
+  
       <div class="d-flex justify-content-center" *ngIf="totalCount > 0">
         <app-pager
           [totalCount]="totalCount"
