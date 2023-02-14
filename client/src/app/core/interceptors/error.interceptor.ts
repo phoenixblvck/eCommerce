@@ -26,16 +26,15 @@ export class ErrorInterceptor implements HttpInterceptor {
             } else {
               this.toastr.error(error.error.message, error.status.toString())
             }
-          }
-          if (error.status === 401) {
+          } else if (error.status === 401) {
             this.toastr.error(error.error.message, error.status.toString())
-          }
-          if (error.status === 404) {
+          } else if (error.status === 404) {
             this.router.navigateByUrl('/not-found');
-          };
-          if (error.status === 500) {
+          } else if (error.status === 500) {
             const navigationExtras: NavigationExtras = {state: {error: error.error}};
             this.router.navigateByUrl('/server-error', navigationExtras);
+          } else {
+            this.toastr.error("Please try again later", "Unknown error")
           }
         }
         return throwError(() => new Error(error.message))
