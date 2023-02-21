@@ -11,10 +11,10 @@
       </ul>
 
       <div class="col-md-3 text-end">
-        <button type="button" class="btn btn-outline-primary position-relative me-2">
+        <button *ngIf="(basketService.basketSource$ | async) as basket" type="button" routerLink="/basket" class="btn btn-outline-primary position-relative me-2">
           <i class="fa fa-shopping-cart "></i>
           <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">
-            5
+            {{getCount(basket.items)}}
             <span class="visually-hidden">cart</span>
           </span>
         </button>
