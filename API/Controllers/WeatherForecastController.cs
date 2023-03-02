@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace API.Controllers;
+namespace api.Controllers;
 
     [ApiExplorerSettings(IgnoreApi = true)]
 public class WeatherForecastController : BaseController

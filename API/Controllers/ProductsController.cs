@@ -1,15 +1,13 @@
-using Infrastructure.Data;
 using Core.Entities;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Core.Interfaces;
 using Core.Specifications;
 using AutoMapper;
-using API.Dtos;
-using API.Errors;
-using API.Helpers;
+using api.Errors;
+using api.Helpers;
+using api.Dtos;
 
-namespace API.Controllers
+namespace api.Controllers
 {
     public class ProductsController : BaseController
     {

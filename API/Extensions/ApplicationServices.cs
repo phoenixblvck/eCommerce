@@ -1,11 +1,12 @@
-using API.Errors;
+using api.Errors;
 using Core.Interfaces;
 using Infrastructure.Data;
+using Infrastructure.Data.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using StackExchange.Redis;
 
-namespace API.Extentions
+namespace api.Extensions
 {
     public static class ApplicationServices
     {
@@ -23,6 +24,7 @@ namespace API.Extentions
             });
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<IBasketRepository, BasketRepository>();
+            services.AddScoped<ITokenService, TokenService>();
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.Configure<ApiBehaviorOptions>(options =>

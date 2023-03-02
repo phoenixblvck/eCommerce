@@ -1,6 +1,6 @@
 using Core.Entities;
 
-namespace API.Dtos
+namespace api.Dtos
 {
     public class ProductToReturnDto
     {
