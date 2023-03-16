@@ -4,9 +4,9 @@ import { ControlValueAccessor, NgControl, FormControl } from '@angular/forms';
 @Component({
   selector: 'app-text-input',
   templateUrl: './text-input.component.html',
-  styleUrls: ['./text-input.component.scss']
+  styleUrls: ['./text-input.component.scss'],
 })
-export class TextInputComponent implements ControlValueAccessor{
+export class TextInputComponent implements ControlValueAccessor {
   @Input() type = 'text';
   @Input() label = '';
 
@@ -14,15 +14,11 @@ export class TextInputComponent implements ControlValueAccessor{
     this.controlDir.valueAccessor = this;
   }
 
-  writeValue(obj: any): void {
-    throw new Error('Method not implemented.');
-  }
-  registerOnChange(fn: any): void {
-  }
-  registerOnTouched(fn: any): void {
-  }
+  writeValue(obj: any): void {}
+  registerOnChange(fn: any): void {}
+  registerOnTouched(fn: any): void {}
 
   get control(): FormControl {
-    return this.controlDir.control as FormControl
+    return this.controlDir.control as FormControl;
   }
 }
