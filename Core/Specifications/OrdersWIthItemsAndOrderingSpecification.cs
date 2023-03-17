@@ -8,7 +8,7 @@ namespace Core.Specifications
         {
             AddInclude(o => o.OrderItems);
             AddInclude(o => o.DeliveryMethod);
-            AddOrderByDescending(o => o.DeliveryMethod);
+            AddOrderByDescending(o => o.Id);
         }
 
         public OrdersWIthItemsAndOrderingSpecification(int id, string email) :
