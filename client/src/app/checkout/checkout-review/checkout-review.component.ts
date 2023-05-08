@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { CdkStepper } from '@angular/cdk/stepper';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-checkout-review',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./checkout-review.component.scss']
 })
 export class CheckoutReviewComponent {
-
+  @Input() appStepper?: CdkStepper;
+  createPaymentIntent() {
+    this.appStepper?.next();
+  }
 }
