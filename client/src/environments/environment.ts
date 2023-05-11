@@ -1,5 +1,5 @@
 export const environment = {
     production: false,
     apiUrl: 'https://localhost:5001/api/',
-    yokoToken: 'pk_live_624f7b29mWoYKq9f24a4'
+    yokoToken: 'pk_test_3adfdbb7mWoYKq9731a4'
 }
